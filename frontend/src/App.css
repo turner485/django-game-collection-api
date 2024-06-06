@@ -37,29 +37,10 @@
   }
 }
 
-ul {
-  margin: 20px;
-  background: #fff;
-  font-family: Montserrat, sans-serif;;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: bold;
-  padding: 40px;
-  box-shadow:
-	  inset #009688 0 0 0 5px, 
-    inset #059c8e 0 0 0 1px, 
-    inset #0cab9c 0 0 0 10px, 
-    inset #1fbdae 0 0 0 11px, 
-    inset #8ce9ff 0 0 0 16px, 
-    inset #48e4d6 0 0 0 17px, 
-    inset #e5f9f7 0 0 0 21px, 
-    inset #bfecf7 0 0 0 22px;
-  text-shadow: 3px 3px 1px #bfecf7;
-}
 li {
   list-style-type: none;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .MuiFormControl-root {
@@ -68,7 +49,7 @@ li {
 .inner-form {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 5px;
 }
 button {
   margin-top: 10px;
@@ -81,4 +62,38 @@ button {
   padding: 0;
   margin: 0 0 30px;
   text-decoration: underline;
+}
+
+ul {
+  padding: 0;
+}
+
+.flex-box {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  flex-flow: row wrap;
+}
+.flex-item {
+  flex-basis: 46.9%;
+  margin: 5px;
+  min-height: 200px;
+  background: #fff;
+  font-family: Montserrat, sans-serif;;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 15px;
+  box-shadow:
+	  inset #fd6195 0 0 0 5px, 
+    inset #668aee 0 0 0 1px, 
+    inset #5147e4 0 0 0 10px, 
+    inset #642f4c 0 0 0 11px, 
+    inset #da3f19 0 0 0 16px;
+  text-shadow: 3px 3px 1px #bfecf7;
+}
+.platform-header {
+  text-transform: capitalize;
 }

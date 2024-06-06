@@ -3,7 +3,7 @@ import axios from 'axios';
 import GameForm from './GameForm';
 
 const GameList = () => {
-    const [games, setGames] = useState([]);
+    const [platforms, setPlatforms] = useState({});
 
     useEffect(() => {
         fetchGames();
@@ -12,23 +12,31 @@ const GameList = () => {
     const fetchGames = async () => {
         try {
             const response = await axios.get('http://127.0.0.1:8000/api/');
-            const games = Object.values(response.data).flatMap(platform => platform);
-            setGames(games);
+            const platforms = response.data.platforms;
+            setPlatforms(platforms);
+            console.log(platforms);
         } catch (error) {
             console.error('Error fetching games:', error);
         }
     };
 
     return (
-        <div>   
-            <ul>
-                <h1 className='game-header'>Game List</h1>
-                {games.map(game => (
-                    <li key={game.id}>
-                        {game.title} - {game.platform}
-                    </li>
+        <div>
+            <h1 className='game-header'>Game List</h1>
+            <div className='flex-box'>
+                {Object.keys(platforms).map(platform => (
+                    <div key={platform} className='flex-item'>
+                        <h2 className='platform-header'>{platform.replace(/_/g, ' ')}</h2>
+                        <ul>
+                            {platforms[platform].map(game => (
+                                <li key={game.id}>
+                                    {game.title} - {game.platform}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 ))}
-            </ul>
+            </div>
             <GameForm fetchGames={fetchGames} />
         </div>
     );
