@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #53687e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+h2 {
+  margin: 0 0 15px;
+  font-size: 32px;
 }
 
 @keyframes App-logo-spin {
@@ -40,8 +45,9 @@
 li {
   list-style-type: none;
   font-weight: 600;
-  font-size: 16px;
 }
+
+
 
 .MuiFormControl-root {
   flex-basis: 50%;
@@ -69,31 +75,82 @@ ul {
 }
 
 .flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: stretch;
-  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  align-content: stretch;
-  flex-flow: row wrap;
+
+  padding: 0px 0;
 }
 .flex-item {
-  flex-basis: 46.9%;
-  margin: 5px;
-  min-height: 200px;
-  background: #fff;
-  font-family: Montserrat, sans-serif;;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: bold;
-  padding: 15px;
-  box-shadow:
-	  inset #fd6195 0 0 0 5px, 
-    inset #668aee 0 0 0 1px, 
-    inset #5147e4 0 0 0 10px, 
-    inset #642f4c 0 0 0 11px, 
-    inset #da3f19 0 0 0 16px;
-  text-shadow: 3px 3px 1px #bfecf7;
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+  margin: 0 15px 30px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.flex-item-inner {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  z-index: 2;
+  font-size: 14px;
+}
+
+.flex-item-inner:hover,
+.flex-item-inner:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.flex-item-inner:hover .flex-item-bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+
+/* .flex-item:nth-child(2n) .flex-item-bg {
+  background-color: #3ecd5e;
+}
+.flex-item:nth-child(3n) .flex-item-bg {
+  background-color: #e44002;
+}
+.flex-item:nth-child(4n) .flex-item-bg {
+  background-color: #952aff;
+}
+.flex-item:nth-child(5n) .flex-item-bg {
+  background-color: #cd3e94;
+}
+.flex-item:nth-child(6n) .flex-item-bg {
+  background-color: #4c49ea;
+} */
+
+.flex-item-bg {
+  height: 128px;
+  width: 128px;
+  background-color: #4381c1;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: -1;
 }
 .platform-header {
   text-transform: capitalize;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root, label{
+  color: #fff!important;
 }
